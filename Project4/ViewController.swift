@@ -81,11 +81,19 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             }
         }
         panning.isEnabled = false
+        self.performSegue(withIdentifier: "gameOver", sender: self)
     }
     
     func timerFired(_ timer: Timer) {
         let dropPos = Int(self.view.frame.width-5)
         dropAsteroid(dropPos)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gameOver" {
+            let destViewController : LandingViewController = segue.destination as! LandingViewController
+            destViewController.score = scoreCounter
+        }
     }
     
     func dropAsteroid(_ pos: Int) {

@@ -12,15 +12,11 @@ class LandingViewController: UIViewController {
 
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var diff: UISegmentedControl!
-
-    var difficulty: Double!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-    }
+    @IBOutlet weak var stats: UILabel!
+    @IBOutlet weak var game: UILabel!
+    var score: Int?
+    var difficulty: Double!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,6 +32,15 @@ class LandingViewController: UIViewController {
         }
         if let destination = segue.destination as? ViewController {
             destination.difficulty = self.difficulty
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if (score != nil) {
+            game.text = "IS THAT ALL YOU GOT?"
+            stats.text = "Your score was " + String(score!)
+            play.setTitle("PROVE YOURSELF", for: .normal)
         }
     }
 
