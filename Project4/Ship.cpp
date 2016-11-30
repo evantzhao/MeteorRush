@@ -26,6 +26,19 @@ void Ship::subtractHealth(int inc) {
 int Ship::getHealth() {
     return health;
 }
+
+void Ship::setHealth(int hp) {
+    health = hp;
+}
+
 std::string Ship::getColor() {
     return color;
+}
+
+bool Ship::isDead() {
+    if(health <= 0) {
+        return true;
+    } else {
+        return false;
+    }
 }

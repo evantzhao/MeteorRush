@@ -21,6 +21,8 @@ public:
     void subtractHealth(int);
     int getHealth();
     std::string getColor();
+    bool isDead();
+    void setHealth(int);
     
 private:
     int health;

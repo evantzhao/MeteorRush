@@ -15,16 +15,21 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     @IBOutlet var panning: UIPanGestureRecognizer!
     @IBOutlet weak var ship: UIView!
     @IBOutlet weak var score: UILabel!
+    @IBOutlet var healthLabel: UILabel!
+    @IBOutlet var deathLabel: UILabel!
+    
     var animator: UIDynamicAnimator!
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
     var timer: Timer!
-    var scoreThing: Int!
+    var scoreCounter: Int!
     var difficulty: Double!
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        scoreThing = 0
+        scoreCounter = 0
+        setHealth(5);
+        healthLabel.text = String(getHealth());
         // Setting up the animator
         animator = UIDynamicAnimator(referenceView: view)
         
@@ -48,20 +53,26 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             for see in view.subviews {
                 if see.isEqual(item) {
                     see.removeFromSuperview()
-                    scoreThing = scoreThing+1
-                    score.text = String(scoreThing)
+                    scoreCounter = scoreCounter+1
+                    addHealth(1);
+                    healthLabel.text = String(getHealth());
+                    score.text = String(scoreCounter)
                 }
             }
         }
     }
     
+    
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item1: UIDynamicItem, with item2: UIDynamicItem, at p: CGPoint) {
-        if item1.isEqual(ship) || item2.isEqual(ship) {
+        subtractHealth(10);
+        healthLabel.text = String(getHealth());
+        if (item1.isEqual(ship) || item2.isEqual(ship)) && isDead() {
             endGame()
         }
     }
     
     func endGame() {
+        deathLabel.text = "lmao u died bro.";
         timer.invalidate()
         for see in view.subviews {
             if !see.isEqual(score){
@@ -70,10 +81,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             }
         }
         panning.isEnabled = false
-    }
-    
-    @IBAction func bloop(_ sender: UIButton) {
-        print(getHealth());
     }
     
     func timerFired(_ timer: Timer) {
@@ -112,7 +119,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

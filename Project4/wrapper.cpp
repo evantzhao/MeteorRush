@@ -31,8 +31,13 @@ extern "C" void subtractHealth(int inc)
     s.subtractHealth(inc);
 }
 
-extern "C" int randInt()
+extern "C" bool isDead()
 {
-    return 1;
+    return s.isDead();
+}
+
+extern "C" void setHealth(int hp)
+{
+    s.setHealth(hp);
 }
 

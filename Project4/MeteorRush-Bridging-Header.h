@@ -6,3 +6,5 @@ int getHealth();
 void addHealth(int);
 void subtractHealth(int);
 int randInt();
+_Bool isDead();
+void setHealth(int);
