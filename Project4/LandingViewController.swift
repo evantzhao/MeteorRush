@@ -32,6 +32,7 @@ class LandingViewController: UIViewController {
         }
         if let destination = segue.destination as? ViewController {
             destination.difficulty = self.difficulty
+            destination.lastScore = self.score
         }
     }
     

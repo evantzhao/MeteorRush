@@ -22,6 +22,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var animator: UIDynamicAnimator!
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
+    var lastScore: Int!
     var timer: Timer!
     var scoreCounter: Int!
     var difficulty: Double!
@@ -97,11 +98,13 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gameOver" {
             let destViewController : LandingViewController = segue.destination as! LandingViewController
-            if destViewController.score == nil {
+            if lastScore == nil {
                 destViewController.score = scoreCounter
             }
-            else if (scoreCounter > destViewController.score!) {
+            else if (scoreCounter > lastScore) {
                 destViewController.score = scoreCounter
+            } else {
+                destViewController.score = lastScore
             }
             
         }
