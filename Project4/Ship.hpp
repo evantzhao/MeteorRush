@@ -17,8 +17,8 @@ class Ship
 {
 public:
     explicit Ship (int, std::string);
-    void addHealth();
-    void subtractHealth();
+    void addHealth(int);
+    void subtractHealth(int);
     int getHealth();
     std::string getColor();
     

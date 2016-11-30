@@ -95,14 +95,22 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2To-kO-pg3">
                                 <rect key="frame" x="135" y="371" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="28t-ba-nRF" appends="YES" id="zRX-JH-J1R"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRV-J1-h8o">
+                                <rect key="frame" x="130" y="549" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="bloop"/>
+                                <connections>
+                                    <action selector="bloop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jTf-8r-Czd"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="39U-gO-jUY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pM1-ao-PeD"/>
                             <constraint firstItem="39U-gO-jUY" firstAttribute="top" secondItem="rJY-Us-sdz" secondAttribute="bottom" constant="112" id="tE5-DV-RSK"/>

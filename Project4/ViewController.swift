@@ -22,10 +22,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var scoreThing: Int!
     var difficulty: Double!
 
-    @IBAction func thing(_ sender: UIButton) {
-    }
-    @IBAction func thingy(_ sender: Any) {
-    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scoreThing = 0
@@ -74,6 +70,10 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             }
         }
         panning.isEnabled = false
+    }
+    
+    @IBAction func bloop(_ sender: UIButton) {
+        print(getHealth());
     }
     
     func timerFired(_ timer: Timer) {

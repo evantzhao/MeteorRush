@@ -17,11 +17,11 @@ Ship::Ship(int h, std::string c) {
     color = c;
 }
 
-void Ship::addHealth() {
-    health = health + 10;
+void Ship::addHealth(int inc) {
+    health = health + inc;
 }
-void Ship::subtractHealth() {
-    health = health - 10;
+void Ship::subtractHealth(int inc) {
+    health = health - inc;
 }
 int Ship::getHealth() {
     return health;

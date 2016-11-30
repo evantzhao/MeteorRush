@@ -13,6 +13,7 @@
 		8D2587F41CBC45B5003D8E10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D2587F21CBC45B5003D8E10 /* LaunchScreen.storyboard */; };
 		8D421E9B1CBEB7AA00075A28 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421E9A1CBEB7AA00075A28 /* LandingViewController.swift */; };
 		8D60A5BC1DEE589A000E9A52 /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D60A5BA1DEE589A000E9A52 /* Ship.cpp */; };
+		8DCEA4FA1DEE7ADD0086C9CF /* wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DCEA4F91DEE7ADD0086C9CF /* wrapper.cpp */; };
 		8DD4A4E11CBED25200960616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD4A4DF1CBED25200960616 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		8D60A5B91DEE589A000E9A52 /* MeteorRush-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MeteorRush-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D60A5BA1DEE589A000E9A52 /* Ship.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ship.cpp; sourceTree = "<group>"; };
 		8D60A5BB1DEE589A000E9A52 /* Ship.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ship.hpp; sourceTree = "<group>"; };
+		8DCEA4F91DEE7ADD0086C9CF /* wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wrapper.cpp; sourceTree = "<group>"; };
 		8DD4A4E01CBED25200960616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,7 +46,7 @@
 		8D2587DD1CBC45B5003D8E10 = {
 			isa = PBXGroup;
 			children = (
-				8D2587E81CBC45B5003D8E10 /* Project4 */,
+				8D2587E81CBC45B5003D8E10 /* MeteorRush */,
 				8D2587E71CBC45B5003D8E10 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +59,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8D2587E81CBC45B5003D8E10 /* Project4 */ = {
+		8D2587E81CBC45B5003D8E10 /* MeteorRush */ = {
 			isa = PBXGroup;
 			children = (
 				8DD4A4DF1CBED25200960616 /* Main.storyboard */,
@@ -70,7 +72,9 @@
 				8D60A5BA1DEE589A000E9A52 /* Ship.cpp */,
 				8D60A5BB1DEE589A000E9A52 /* Ship.hpp */,
 				8D60A5B91DEE589A000E9A52 /* MeteorRush-Bridging-Header.h */,
+				8DCEA4F91DEE7ADD0086C9CF /* wrapper.cpp */,
 			);
+			name = MeteorRush;
 			path = Project4;
 			sourceTree = "<group>";
 		};
@@ -151,6 +155,7 @@
 				8D60A5BC1DEE589A000E9A52 /* Ship.cpp in Sources */,
 				8D421E9B1CBEB7AA00075A28 /* LandingViewController.swift in Sources */,
 				8D2587EA1CBC45B5003D8E10 /* AppDelegate.swift in Sources */,
+				8DCEA4FA1DEE7ADD0086C9CF /* wrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
