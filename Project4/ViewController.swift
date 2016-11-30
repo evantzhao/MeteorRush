@@ -12,6 +12,7 @@ import UIKit
 
 class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
+    @IBOutlet weak var playAgain: UIButton!
     @IBOutlet var panning: UIPanGestureRecognizer!
     @IBOutlet weak var ship: UIView!
     @IBOutlet weak var score: UILabel!
@@ -81,6 +82,10 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             }
         }
         panning.isEnabled = false
+        playAgain.isHidden = false
+    }
+    
+    func backToMain() {
         self.performSegue(withIdentifier: "gameOver", sender: self)
     }
     
@@ -92,7 +97,13 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gameOver" {
             let destViewController : LandingViewController = segue.destination as! LandingViewController
-            destViewController.score = scoreCounter
+            if destViewController.score == nil {
+                destViewController.score = scoreCounter
+            }
+            else if (scoreCounter > destViewController.score!) {
+                destViewController.score = scoreCounter
+            }
+            
         }
     }
     
@@ -120,6 +131,8 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playAgain.addTarget(self, action: #selector(ViewController.backToMain as (ViewController) -> () -> ()), for: .touchUpInside)
+        playAgain.isHidden = true;
         // Do any additional setup after loading the view, typically from a nib.
     }
 

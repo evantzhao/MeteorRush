@@ -39,7 +39,7 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         if (score != nil) {
             game.text = "IS THAT ALL YOU GOT?"
-            stats.text = "Your score was " + String(score!)
+            stats.text = "Your best score was " + String(score!)
             play.setTitle("PROVE YOURSELF", for: .normal)
         }
     }

@@ -68,7 +68,7 @@
                                 <rect key="frame" x="172" y="386.5" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="dek-Ke-fYO"/>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="dek-Ke-fYO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,24 +124,24 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39U-gO-jUY">
-                                <rect key="frame" x="334" y="112" width="14.5" height="30.5"/>
+                                <rect key="frame" x="334" y="68" width="14.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRA-4P-uPi">
-                                <rect key="frame" x="304" y="83" width="45" height="21"/>
+                                <rect key="frame" x="304" y="39" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igz-Zg-joS">
-                                <rect key="frame" x="16" y="83" width="50" height="21"/>
+                                <rect key="frame" x="16" y="39" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ux-if-CxS">
-                                <rect key="frame" x="187.5" y="289" width="0.0" height="0.0"/>
+                                <rect key="frame" x="187.5" y="245" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,10 +149,15 @@
                                 <color key="shadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ou-gI-zoh">
-                                <rect key="frame" x="16" y="112" width="14.5" height="30.5"/>
+                                <rect key="frame" x="16" y="68" width="14.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W83-EY-1H8">
+                                <rect key="frame" x="117" y="318" width="132" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play Again?"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -173,6 +178,7 @@
                         <outlet property="deathLabel" destination="4ux-if-CxS" id="68Y-HJ-4A9"/>
                         <outlet property="healthLabel" destination="7Ou-gI-zoh" id="ARE-BK-zdU"/>
                         <outlet property="panning" destination="28t-ba-nRF" id="g9O-sQ-tWg"/>
+                        <outlet property="playAgain" destination="W83-EY-1H8" id="5h0-an-gbb"/>
                         <outlet property="score" destination="39U-gO-jUY" id="ZmL-ug-hvb"/>
                         <outlet property="ship" destination="2To-kO-pg3" id="6J6-cl-K6h"/>
                         <segue destination="pv0-Ks-Ld1" kind="modal" identifier="gameOver" id="9Fx-Gr-Gqr"/>
