@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="L0d-ZY-rqh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing View Controller-->
+        <scene sceneID="6x9-cc-IqR">
+            <objects>
+                <viewController id="pv0-Ks-Ld1" customClass="LandingViewController" customModule="MeteorRush" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0tK-RL-eT8"/>
+                        <viewControllerLayoutGuide type="bottom" id="JWL-2g-MSb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ybi-2q-NXs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AHHHHHhhHHh!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z03-df-zC0">
+                                <rect key="frame" x="88.5" y="116" width="198.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoid the asteroids!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaw-IV-Uz5">
+                                <rect key="frame" x="120" y="178.5" width="135.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QM-S3-dpA">
+                                <rect key="frame" x="172.5" y="547" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="dek-Ke-fYO"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Snf-ed-2MZ">
+                                <rect key="frame" x="113" y="317" width="149" height="28"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Usw-vE-fWM">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="29"/>
+                                        <segments>
+                                            <segment title="Easy"/>
+                                            <segment title="Ludicrous"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Snf-ed-2MZ" firstAttribute="top" secondItem="eaw-IV-Uz5" secondAttribute="bottom" constant="120.5" id="Akh-y9-nKf"/>
+                            <constraint firstItem="eaw-IV-Uz5" firstAttribute="centerX" secondItem="Ybi-2q-NXs" secondAttribute="centerX" id="LQ9-D9-i2B"/>
+                            <constraint firstItem="Z03-df-zC0" firstAttribute="top" secondItem="0tK-RL-eT8" secondAttribute="bottom" constant="52" id="aBJ-tN-OB9"/>
+                            <constraint firstItem="Z03-df-zC0" firstAttribute="centerX" secondItem="Ybi-2q-NXs" secondAttribute="centerX" id="baB-ib-416"/>
+                            <constraint firstItem="eaw-IV-Uz5" firstAttribute="top" secondItem="Z03-df-zC0" secondAttribute="bottom" constant="31" id="czy-e0-3Cb"/>
+                            <constraint firstItem="JWL-2g-MSb" firstAttribute="top" secondItem="1QM-S3-dpA" secondAttribute="bottom" constant="90" id="jIW-6W-L8J"/>
+                            <constraint firstItem="Snf-ed-2MZ" firstAttribute="centerX" secondItem="Ybi-2q-NXs" secondAttribute="centerX" id="tMG-ZB-B50"/>
+                            <constraint firstItem="1QM-S3-dpA" firstAttribute="centerX" secondItem="Ybi-2q-NXs" secondAttribute="centerX" id="ty6-i6-IoC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Hn-3C-LmY"/>
+                    <connections>
+                        <outlet property="diff" destination="Usw-vE-fWM" id="DID-3X-BuB"/>
+                        <outlet property="play" destination="1QM-S3-dpA" id="lM8-Ag-BoI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jvo-gk-QEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1270" y="340"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MeteorRush" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rJY-Us-sdz"/>
+                        <viewControllerLayoutGuide type="bottom" id="6D5-Ht-hzX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39U-gO-jUY">
+                                <rect key="frame" x="180.5" y="176" width="14.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2To-kO-pg3">
+                                <rect key="frame" x="135" y="371" width="50" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="28t-ba-nRF" appends="YES" id="zRX-JH-J1R"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="39U-gO-jUY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pM1-ao-PeD"/>
+                            <constraint firstItem="39U-gO-jUY" firstAttribute="top" secondItem="rJY-Us-sdz" secondAttribute="bottom" constant="112" id="tE5-DV-RSK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CPI-4r-EoC"/>
+                    <connections>
+                        <outlet property="panning" destination="28t-ba-nRF" id="g9O-sQ-tWg"/>
+                        <outlet property="score" destination="39U-gO-jUY" id="ZmL-ug-hvb"/>
+                        <outlet property="ship" destination="2To-kO-pg3" id="6J6-cl-K6h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="28t-ba-nRF">
+                    <connections>
+                        <action selector="dragShip:" destination="BYZ-38-t0r" id="WvS-fS-8xI"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1757.5" y="339.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cno-Mc-V32">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L0d-ZY-rqh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ntb-ia-52Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pv0-Ks-Ld1" kind="relationship" relationship="rootViewController" id="H6y-UX-wLh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Cz-aZ-xIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="340"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
