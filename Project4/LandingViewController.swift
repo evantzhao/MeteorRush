@@ -17,7 +17,10 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var game: UILabel!
     var score: Int?
     var difficulty: Double!
-
+    
+    var skins: Int!
+    @IBOutlet var skin: UISegmentedControl!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,8 +33,17 @@ class LandingViewController: UIViewController {
         }   else if slider == 1 {
             difficulty = 0.08
         }
+        
+        let skinner = skin.selectedSegmentIndex
+        if skinner == 0 {
+            skins = 0
+        } else if skinner == 1{
+            skins = 1
+        }
+        
         if let destination = segue.destination as? ViewController {
             destination.difficulty = self.difficulty
+            destination.skins = self.skins
             destination.lastScore = self.score
         }
     }

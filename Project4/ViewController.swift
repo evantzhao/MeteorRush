@@ -13,11 +13,12 @@ import UIKit
 class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     @IBOutlet weak var playAgain: UIButton!
-    @IBOutlet var panning: UIPanGestureRecognizer!
-    @IBOutlet weak var ship: UIView!
     @IBOutlet weak var score: UILabel!
     @IBOutlet var healthLabel: UILabel!
     @IBOutlet var deathLabel: UILabel!
+    @IBOutlet var newPanning: UIPanGestureRecognizer!
+    
+    @IBOutlet var rocket: UIImageView!
     
     var animator: UIDynamicAnimator!
     var gravity: UIGravityBehavior!
@@ -26,9 +27,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var timer: Timer!
     var scoreCounter: Int!
     var difficulty: Double!
+    var skins: Int!
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         scoreCounter = 0
         setHealth(5);
         healthLabel.text = String(getHealth());
@@ -36,7 +39,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         animator = UIDynamicAnimator(referenceView: view)
         
         // Setting up other behaviors (Gravity, collision, timer)
-        collision = UICollisionBehavior(items: [ship])
+        collision = UICollisionBehavior(items: [rocket])
         collision.collisionDelegate = self
         collision.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collision)
@@ -49,7 +52,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint) {
-        if !item.isEqual(ship) && p.y > 700 {
+        if !item.isEqual(rocket) && p.y > 700 {
             gravity.removeItem(item)
             collision.removeItem(item)
             for see in view.subviews {
@@ -66,9 +69,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item1: UIDynamicItem, with item2: UIDynamicItem, at p: CGPoint) {
-        subtractHealth(10);
+        if (item1.isEqual(rocket) || item2.isEqual(rocket)) {
+            subtractHealth(10);
+        }
         healthLabel.text = String(getHealth());
-        if (item1.isEqual(ship) || item2.isEqual(ship)) && isDead() {
+        if (item1.isEqual(rocket) || item2.isEqual(rocket)) && isDead() {
             endGame()
         }
     }
@@ -82,7 +87,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
                 collision.removeItem(see)
             }
         }
-        panning.isEnabled = false
+        newPanning.isEnabled = false
         playAgain.isHidden = false
     }
     
@@ -124,7 +129,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         collision.addItem(asteroidView)
     }
     
-    @IBAction func dragShip(_ sender: UIPanGestureRecognizer) {
+    @IBAction func dragRocket(_ sender: UIPanGestureRecognizer) {
         let shipView = sender.view!
         let s = sender.translation(in: view)
         shipView.center = CGPoint(x: shipView.center.x + s.x, y: shipView.center.y + s.y)
@@ -137,6 +142,12 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         playAgain.addTarget(self, action: #selector(ViewController.backToMain as (ViewController) -> () -> ()), for: .touchUpInside)
         playAgain.isHidden = true;
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Setting up the skins
+        if(skins == 0) {
+            rocket.backgroundColor = UIColor.red
+            rocket.image = UIImage(named: "RED")
+        }
     }
 
     override func didReceiveMemoryWarning() {
