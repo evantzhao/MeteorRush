@@ -66,7 +66,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item1: UIDynamicItem, with item2: UIDynamicItem, at p: CGPoint) {
-        subtractHealth(10);
+        if (item1.isEqual(ship) || item2.isEqual(ship)) {
+            subtractHealth(10);
+        }
         healthLabel.text = String(getHealth());
         if (item1.isEqual(ship) || item2.isEqual(ship)) && isDead() {
             endGame()
